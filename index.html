@@ -1,1 +1,665 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Επανάληψη της Ιστορίας Α' Γυμνασίου - Αρχαϊκή Εποχή</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Comfortaa', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #000;
+            color: #FFD700;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #FFD700;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 15px;
+        }
+        .header p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #222;
+            border-left: 4px solid #FFD700;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        label:hover {
+            color: #FFF;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #FFD700;
+        }
+        .correct {
+            background-color: #2a5a2a;
+        }
+        .incorrect {
+            background-color: #5a2a2a;
+        }
+        .score-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #222;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255,215,0,0.3);
+            border: 1px solid #FFD700;
+        }
+        .score {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #FFD700;
+        }
+        .disabled {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        .section-title {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid #FFD700;
+        }
+        .section-title h2 {
+            margin: 5px 0;
+        }
+        .credits {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="score-container">
+        <div>Σκορ: <span class="score">0</span>/50</div>
+    </div>
 
+    <div class="header">
+        <h1>1ο Γυμνάσιο Πυλαίας</h1>
+        <h2>Επανάληψη της Ιστορίας Α' Γυμνασίου</h2>
+        <p>Δημιουργία/Επιμέλεια: Παναγιώτης Δόμβρος (CC BY-NC)</p>
+        <p>Διευθυντής 1ου Γυμνασίου Πυλαίας</p>
+        <h2>Ερωτήσεις Πολλαπλής Επιλογής</h2>
+        <h3>Αρχαϊκή Εποχή</h3>
+    </div>
+
+    <div class="section-title">
+        <h2>1. Αποικιακή Εξάπλωση</h2>
+    </div>
+
+    <div class="question" id="q1">
+        <p>1. Ποιος ήταν ο κύριος λόγος που οδήγησε τους Έλληνες στον αποικισμό;</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="a"> α) Θρησκευτικός</label>
+            <label><input type="radio" name="q1" value="b"> β) Οικονομικός</label>
+            <label><input type="radio" name="q1" value="c"> γ) Καλλιτεχνικός</label>
+        </div>
+    </div>
+
+    <div class="question" id="q2">
+        <p>2. Ποιον όριζαν ως αρχηγό της αποστολής κατά τον αποικισμό;</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="a"> α) Ναύαρχο</label>
+            <label><input type="radio" name="q2" value="b"> β) Οικιστή</label>
+            <label><input type="radio" name="q2" value="c"> γ) Έφορο</label>
+        </div>
+    </div>
+
+    <div class="question" id="q3">
+        <p>3. Ποια γεωγραφική περιοχή ονομάστηκε 'Μεγάλη Ελλάδα';</p>
+        <div class="options">
+            <label><input type="radio" name="q3" value="a"> α) Μικρά Ασία</label>
+            <label><input type="radio" name="q3" value="b"> β) Βόρεια Αφρική</label>
+            <label><input type="radio" name="q3" value="c"> γ) Κάτω Ιταλία</label>
+        </div>
+    </div>
+
+    <div class="question" id="q4">
+        <p>4. Ποια πόλη διακρίθηκε για την αποικιακή της πολιτική;</p>
+        <div class="options">
+            <label><input type="radio" name="q4" value="a"> α) Σπάρτη</label>
+            <label><input type="radio" name="q4" value="b"> β) Χαλκίδα</label>
+            <label><input type="radio" name="q4" value="c"> γ) Άργος</label>
+        </div>
+    </div>
+
+    <div class="question" id="q5">
+        <p>5. Ποιο ήταν ένα άμεσο αποτέλεσμα του αποικισμού;</p>
+        <div class="options">
+            <label><input type="radio" name="q5" value="a"> α) Πτώση της οικονομίας</label>
+            <label><input type="radio" name="q5" value="b"> β) Πολιτιστική απομόνωση</label>
+            <label><input type="radio" name="q5" value="c"> γ) Ανάπτυξη του εμπορίου</label>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>2. Η πόλη-κράτος και η εξέλιξη του πολιτεύματος</h2>
+    </div>
+
+    <div class="question" id="q6">
+        <p>6. Τι αποτέλεσε τον πυρήνα της πόλης-κράτους;</p>
+        <div class="options">
+            <label><input type="radio" name="q6" value="a"> α) Αγορά</label>
+            <label><input type="radio" name="q6" value="b"> β) Συνοικισμός</label>
+            <label><input type="radio" name="q6" value="c"> γ) Τείχη</label>
+        </div>
+    </div>
+
+    <div class="question" id="q7">
+        <p>7. Ποιο ήταν το κύριο πολίτευμα μετά τη βασιλεία;</p>
+        <div class="options">
+            <label><input type="radio" name="q7" value="a"> α) Δημοκρατία</label>
+            <label><input type="radio" name="q7" value="b"> β) Αριστοκρατία</label>
+            <label><input type="radio" name="q7" value="c"> γ) Τυραννίδα</label>
+        </div>
+    </div>
+
+    <div class="question" id="q8">
+        <p>8. Τι ήταν η οπλιτική φάλαγγα;</p>
+        <div class="options">
+            <label><input type="radio" name="q8" value="a"> α) Μουσικό σύνολο</label>
+            <label><input type="radio" name="q8" value="b"> β) Στρατιωτική μονάδα</label>
+            <label><input type="radio" name="q8" value="c"> γ) Εμπορική συμμαχία</label>
+        </div>
+    </div>
+
+    <div class="question" id="q9">
+        <p>9. Ποια κοινωνική ομάδα επέβαλε το ολιγαρχικό πολίτευμα;</p>
+        <div class="options">
+            <label><input type="radio" name="q9" value="a"> α) Αγρότες</label>
+            <label><input type="radio" name="q9" value="b"> β) Αριστοκράτες</label>
+            <label><input type="radio" name="q9" value="c"> γ) Έμποροι</label>
+        </div>
+    </div>
+
+    <div class="question" id="q10">
+        <p>10. Ποια συνέπεια είχε η συμμετοχή στην οπλιτική φάλαγγα;</p>
+        <div class="options">
+            <label><input type="radio" name="q10" value="a"> α) Αύξηση κοινωνικών διαφορών</label>
+            <label><input type="radio" name="q10" value="b"> β) Κοινωνική εξίσωση</label>
+            <label><input type="radio" name="q10" value="c"> γ) Πολιτική αποσταθεροποίηση</label>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>3. Η Σπάρτη</h2>
+    </div>
+
+    <div class="question" id="q11">
+        <p>11. Ποιοι είχαν πλήρη πολιτικά δικαιώματα στη Σπάρτη;</p>
+        <div class="options">
+            <label><input type="radio" name="q11" value="a"> α) Είλωτες</label>
+            <label><input type="radio" name="q11" value="b"> β) Περίοικοι</label>
+            <label><input type="radio" name="q11" value="c"> γ) Σπαρτιάτες</label>
+        </div>
+    </div>
+
+    <div class="question" id="q12">
+        <p>12. Ποιοι ασκούσαν την πραγματική εξουσία στη Σπάρτη;</p>
+        <div class="options">
+            <label><input type="radio" name="q12" value="a"> α) Οι δύο βασιλείς</label>
+            <label><input type="radio" name="q12" value="b"> β) Η Απέλλα</label>
+            <label><input type="radio" name="q12" value="c"> γ) Οι έφοροι</label>
+        </div>
+    </div>
+
+    <div class="question" id="q13">
+        <p>13. Τι μάθαιναν τα παιδιά στη Σπάρτη;</p>
+        <div class="options">
+            <label><input type="radio" name="q13" value="a"> α) Μόνο μουσική</label>
+            <label><input type="radio" name="q13" value="b"> β) Πολλαπλές δεξιότητες και αντοχή</label>
+            <label><input type="radio" name="q13" value="c"> γ) Μόνο ανάγνωση</label>
+        </div>
+    </div>
+
+    <div class="question" id="q14">
+        <p>14. Ποια ήταν η κύρια αγροτική τάξη στη Σπάρτη;</p>
+        <div class="options">
+            <label><input type="radio" name="q14" value="a"> α) Σπαρτιάτες</label>
+            <label><input type="radio" name="q14" value="b"> β) Είλωτες</label>
+            <label><input type="radio" name="q14" value="c"> γ) Έφοροι</label>
+        </div>
+    </div>
+
+    <div class="question" id="q15">
+        <p>15. Τι είναι ο 'λακωνισμός';</p>
+        <div class="options">
+            <label><input type="radio" name="q15" value="a"> α) Ακατάληπτος λόγος</label>
+            <label><input type="radio" name="q15" value="b"> β) Σύντομος και ουσιαστικός λόγος</label>
+            <label><input type="radio" name="q15" value="c"> γ) Διακοσμητικός τρόπος ομιλίας</label>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>4. Αθήνα: Από τη Βασιλεία στην Αριστοκρατία</h2>
+    </div>
+
+    <div class="question" id="q16">
+        <p>16. Ποιος υπήρξε ο τελευταίος βασιλιάς της Αθήνας;</p>
+        <div class="options">
+            <label><input type="radio" name="q16" value="a"> α) Θησέας</label>
+            <label><input type="radio" name="q16" value="b"> β) Κόδρος</label>
+            <label><input type="radio" name="q16" value="c"> γ) Σόλωνας</label>
+        </div>
+    </div>
+
+    <div class="question" id="q17">
+        <p>17. Ποιος θεσμός διατηρήθηκε με θρησκευτικό χαρακτήρα μετά την κατάργηση της βασιλείας;</p>
+        <div class="options">
+            <label><input type="radio" name="q17" value="a"> α) Άρχων-βασιλιάς</label>
+            <label><input type="radio" name="q17" value="b"> β) Πολέμαρχος</label>
+            <label><input type="radio" name="q17" value="c"> γ) Εκκλησία του Δήμου</label>
+        </div>
+    </div>
+
+    <div class="question" id="q18">
+        <p>18. Ποια κοινωνική τάξη αμφισβήτησε την εξουσία των ευγενών;</p>
+        <div class="options">
+            <label><input type="radio" name="q18" value="a"> α) Δούλοι</label>
+            <label><input type="radio" name="q18" value="b"> β) Έμποροι και βιοτέχνες</label>
+            <label><input type="radio" name="q18" value="c"> γ) Ιερείς</label>
+        </div>
+    </div>
+
+    <div class="question" id="q19">
+        <p>19. Τι έκανε ο Δράκοντας το 624 π.Χ.;</p>
+        <div class="options">
+            <label><input type="radio" name="q19" value="a"> α) Ίδρυσε νέες φυλές</label>
+            <label><input type="radio" name="q19" value="b"> β) Νομοθέτησε αυστηρούς νόμους</label>
+            <label><input type="radio" name="q19" value="c"> γ) Έδωσε δικαίωμα ψήφου σε όλους</label>
+        </div>
+    </div>
+
+    <div class="question" id="q20">
+        <p>20. Ποιο χαρακτηριστικό είχαν οι νόμοι του Δράκοντα;</p>
+        <div class="options">
+            <label><input type="radio" name="q20" value="a"> α) Ήταν ανεκτοί</label>
+            <label><input type="radio" name="q20" value="b"> β) Ήταν ασαφείς</label>
+            <label><input type="radio" name="q20" value="c"> γ) Ήταν πολύ αυστηροί</label>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>5. Αθήνα: Πορεία προς τη Δημοκρατία</h2>
+    </div>
+
+    <div class="question" id="q21">
+        <p>21. Ποιο μέτρο πήρε ο Σόλωνας για τους χρεωμένους πολίτες;</p>
+        <div class="options">
+            <label><input type="radio" name="q21" value="a"> α) Σεισάχθεια</label>
+            <label><input type="radio" name="q21" value="b"> β) Κατάργηση περιουσίας</label>
+            <label><input type="radio" name="q21" value="c"> γ) Αύξηση φόρων</label>
+        </div>
+    </div>
+
+    <div class="question" id="q22">
+        <p>22. Με ποια βάση διαχώρισε τις τάξεις ο Σόλωνας;</p>
+        <div class="options">
+            <label><input type="radio" name="q22" value="a"> α) Καταγωγή</label>
+            <label><input type="radio" name="q22" value="b"> β) Εισόδημα</label>
+            <label><input type="radio" name="q22" value="c"> γ) Φυλή</label>
+        </div>
+    </div>
+
+    <div class="question" id="q23">
+        <p>23. Ποιος ανέλαβε την εξουσία μετά τον Σόλωνα και έγινε τύραννος;</p>
+        <div class="options">
+            <label><input type="radio" name="q23" value="a"> α) Ιππίας</label>
+            <label><input type="radio" name="q23" value="b"> β) Κλεισθένης</label>
+            <label><input type="radio" name="q23" value="c"> γ) Πεισίστρατος</label>
+        </div>
+    </div>
+
+    <div class="question" id="q24">
+        <p>24. Ποια ήταν η μεγαλύτερη καινοτομία του Κλεισθένη;</p>
+        <div class="options">
+            <label><input type="radio" name="q24" value="a"> α) Κατάργηση φυλών</label>
+            <label><input type="radio" name="q24" value="b"> β) Δημιουργία 10 νέων φυλών</label>
+            <label><input type="radio" name="q24" value="c"> γ) Μείωση στρατηγών</label>
+        </div>
+    </div>
+
+    <div class="question" id="q25">
+        <p>25. Ποιο όργανο απέκτησε μεγάλη σημασία με τον Κλεισθένη;</p>
+        <div class="options">
+            <label><input type="radio" name="q25" value="a"> α) Άρειος Πάγος</label>
+            <label><input type="radio" name="q25" value="b"> β) Εκκλησία του Δήμου</label>
+            <label><input type="radio" name="q25" value="c"> γ) Βουλή των Τετρακοσίων</label>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>6. Οι Πανελλήνιοι Δεσμοί</h2>
+    </div>
+
+    <div class="question" id="q26">
+        <p>26. Ποιο στοιχείο δεν συνέβαλε στη διαμόρφωση της πανελλήνιας συνείδησης των Ελλήνων;</p>
+        <div class="options">
+            <label><input type="radio" name="q26" value="a"> α) Κοινή γλώσσα</label>
+            <label><input type="radio" name="q26" value="b"> β) Κοινή νομοθεσία</label>
+            <label><input type="radio" name="q26" value="c"> γ) Κοινή θρησκεία</label>
+        </div>
+    </div>
+
+    <div class="question" id="q27">
+        <p>27. Ποια ήταν η πιο σημαντική πανελλήνια αθλητική διοργάνωση στην αρχαία Ελλάδα;</p>
+        <div class="options">
+            <label><input type="radio" name="q27" value="a"> α) Ολυμπιακοί Αγώνες</label>
+            <label><input type="radio" name="q27" value="b"> β) Πύθια</label>
+            <label><input type="radio" name="q27" value="c"> γ) Νέμεα</label>
+        </div>
+    </div>
+
+    <div class="question" id="q28">
+        <p>28. Ποιο ήταν το έπαθλο των νικητών στους Ολυμπιακούς Αγώνες;</p>
+        <div class="options">
+            <label><input type="radio" name="q28" value="a"> α) Χρυσό μετάλλιο</label>
+            <label><input type="radio" name="q28" value="b"> β) Στεφάνι από αγριελιά</label>
+            <label><input type="radio" name="q28" value="c"> γ) Χρηματική αποζημίωση</label>
+        </div>
+    </div>
+
+    <div class="question" id="q29">
+        <p>29. Ποιος θεσμός είχε ως σκοπό τη διαχείριση θεμάτων που αφορούσαν ιερά και πόλεις;</p>
+        <div class="options">
+            <label><input type="radio" name="q29" value="a"> α) Εκκλησία του Δήμου</label>
+            <label><input type="radio" name="q29" value="b"> β) Αμφικτιονία</label>
+            <label><input type="radio" name="q29" value="c"> γ) Βουλή των Πεντακοσίων</label>
+        </div>
+    </div>
+
+    <div class="question" id="q30">
+        <p>30. Ποια λειτουργία δεν σχετιζόταν με το Μαντείο των Δελφών;</p>
+        <div class="options">
+            <label><input type="radio" name="q30" value="a"> α) Διευθέτηση πολιτικών διαφορών</label>
+            <label><input type="radio" name="q30" value="b"> β) Παροχή χρησμών</label>
+            <label><input type="radio" name="q30" value="c"> γ) Διεξαγωγή εμπορικών συναλλαγών</label>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>7. Πέρσες και Έλληνες: Δύο κόσμοι συγκρούονται</h2>
+    </div>
+
+    <div class="question" id="q31">
+        <p>31. Ποιος θεωρείται ιδρυτής του περσικού κράτους;</p>
+        <div class="options">
+            <label><input type="radio" name="q31" value="a"> α) Δαρείος Α΄</label>
+            <label><input type="radio" name="q31" value="b"> β) Ξέρξης</label>
+            <label><input type="radio" name="q31" value="c"> γ) Κύρος Α΄</label>
+        </div>
+    </div>
+
+    <div class="question" id="q32">
+        <p>32. Ποιο ήταν το διοικητικό σύστημα των Περσών;</p>
+        <div class="options">
+            <label><input type="radio" name="q32" value="a"> α) Φυλές</label>
+            <label><input type="radio" name="q32" value="b"> β) Σατραπείες</label>
+            <label><input type="radio" name="q32" value="c"> γ) Δήμοι</label>
+        </div>
+    </div>
+
+    <div class="question" id="q33">
+        <p>33. Τι απαγορευόταν αυστηρά στην περσική κοινωνία;</p>
+        <div class="options">
+            <label><input type="radio" name="q33" value="a"> α) Η ειλικρίνεια</label>
+            <label><input type="radio" name="q33" value="b"> β) Το ψεύδος</label>
+            <label><input type="radio" name="q33" value="c"> γ) Η εκπαίδευση</label>
+        </div>
+    </div>
+
+    <div class="question" id="q34">
+        <p>34. Ποιοι Έλληνες βοήθησαν τους Ίωνες στην επανάσταση;</p>
+        <div class="options">
+            <label><input type="radio" name="q34" value="a"> α) Οι Θηβαίοι</label>
+            <label><input type="radio" name="q34" value="b"> β) Οι Αθηναίοι και οι Ερετριείς</label>
+            <label><input type="radio" name="q34" value="c"> γ) Οι Σπαρτιάτες</label>
+        </div>
+    </div>
+
+    <div class="question" id="q35">
+        <p>35. Ποιο ήταν το αποτέλεσμα της Ιωνικής Επανάστασης;</p>
+        <div class="options">
+            <label><input type="radio" name="q35" value="a"> α) Επιτυχία των Ελλήνων</label>
+            <label><input type="radio" name="q35" value="b"> β) Ισοπαλία</label>
+            <label><input type="radio" name="q35" value="c"> γ) Ήττα των Ελλήνων</label>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>8. Οι Περσικοί Πόλεμοι</h2>
+    </div>
+
+    <div class="question" id="q36">
+        <p>36. Σε ποια μάχη νίκησαν οι Αθηναίοι το 490 π.Χ.;</p>
+        <div class="options">
+            <label><input type="radio" name="q36" value="a"> α) Μάχη του Μαραθώνα</label>
+            <label><input type="radio" name="q36" value="b"> β) Μάχη των Θερμοπυλών</label>
+            <label><input type="radio" name="q36" value="c"> γ) Μάχη των Πλαταιών</label>
+        </div>
+    </div>
+
+    <div class="question" id="q37">
+        <p>37. Ποιος ήταν ο αρχιστράτηγος των Περσών στη μάχη του Μαραθώνα;</p>
+        <div class="options">
+            <label><input type="radio" name="q37" value="a"> α) Ξέρξης</label>
+            <label><input type="radio" name="q37" value="b"> β) Μαρδόνιος</label>
+            <label><input type="radio" name="q37" value="c"> γ) Δάτης</label>
+        </div>
+    </div>
+
+    <div class="question" id="q38">
+        <p>38. Ποιος Έλληνας ειδοποίησε την Αθήνα για τη νίκη στο Μαραθώνα;</p>
+        <div class="options">
+            <label><input type="radio" name="q38" value="a"> α) Ο Φειδιππίδης</label>
+            <label><input type="radio" name="q38" value="b"> β) Ο Λεωνίδας</label>
+            <label><input type="radio" name="q38" value="c"> γ) Ο Αριστείδης</label>
+        </div>
+    </div>
+
+    <div class="question" id="q39">
+        <p>39. Ποιος ήταν ο αρχηγός των Ελλήνων στις Θερμοπύλες;</p>
+        <div class="options">
+            <label><input type="radio" name="q39" value="a"> α) Θεμιστοκλής</label>
+            <label><input type="radio" name="q39" value="b"> β) Λεωνίδας</label>
+            <label><input type="radio" name="q39" value="c"> γ) Μιλτιάδης</label>
+        </div>
+    </div>
+
+    <div class="question" id="q40">
+        <p>40. Ποια ήταν η τελευταία μεγάλη μάχη των Περσικών Πολέμων;</p>
+        <div class="options">
+            <label><input type="radio" name="q40" value="a"> α) Μάχη της Σαλαμίνας</label>
+            <label><input type="radio" name="q40" value="b"> β) Μάχη του Μαραθώνα</label>
+            <label><input type="radio" name="q40" value="c"> γ) Μάχη των Πλαταιών</label>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>9. Οι επιπτώσεις των Περσικών Πολέμων</h2>
+    </div>
+
+    <div class="question" id="q41">
+        <p>41. Ποια πόλη αναδείχθηκε ηγεμονική δύναμη μετά τους Περσικούς Πολέμους;</p>
+        <div class="options">
+            <label><input type="radio" name="q41" value="a"> α) Η Σπάρτη</label>
+            <label><input type="radio" name="q41" value="b"> β) Η Θήβα</label>
+            <label><input type="radio" name="q41" value="c"> γ) Η Αθήνα</label>
+        </div>
+    </div>
+
+    <div class="question" id="q42">
+        <p>42. Ποιος οργανισμός δημιουργήθηκε με πρωτοβουλία της Αθήνας;</p>
+        <div class="options">
+            <label><input type="radio" name="q42" value="a"> α) Αχαϊκή Συμπολιτεία</label>
+            <label><input type="radio" name="q42" value="b"> β) Δηλιακή Συμμαχία</label>
+            <label><input type="radio" name="q42" value="c"> γ) Πελοποννησιακή Συμμαχία</label>
+        </div>
+    </div>
+
+    <div class="question" id="q43">
+        <p>43. Πού φυλάσσονταν αρχικά τα χρήματα της Δηλιακής Συμμαχίας;</p>
+        <div class="options">
+            <label><input type="radio" name="q43" value="a"> α) Στην Αθήνα</label>
+            <label><input type="radio" name="q43" value="b"> β) Στη Δήλο</label>
+            <label><input type="radio" name="q43" value="c"> γ) Στην Κόρινθο</label>
+        </div>
+    </div>
+
+    <div class="question" id="q44">
+        <p>44. Τι συνέβη με το ταμείο της Δηλιακής Συμμαχίας;</p>
+        <div class="options">
+            <label><input type="radio" name="q44" value="a"> α) Καταστράφηκε σε πόλεμο</label>
+            <label><input type="radio" name="q44" value="b"> β) Παρέμεινε στη Δήλο</label>
+            <label><input type="radio" name="q44" value="c"> γ) Μεταφέρθηκε στην Αθήνα</label>
+        </div>
+    </div>
+
+    <div class="question" id="q45">
+        <p>45. Ποια κατηγορία πολιτών ενισχύθηκε μετά τους Περσικούς Πολέμους;</p>
+        <div class="options">
+            <label><input type="radio" name="q45" value="a"> α) Οι ευγενείς</label>
+            <label><input type="radio" name="q45" value="b"> β) Οι δούλοι</label>
+            <label><input type="radio" name="q45" value="c"> γ) Οι ναύτες και οι λαϊκές τάξεις</label>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>10. Ο πολιτισμός στην Αρχαϊκή Εποχή</h2>
+    </div>
+
+    <div class="question" id="q46">
+        <p>46. Ποιο είδος λογοτεχνίας κυριάρχησε στην Αρχαϊκή Εποχή;</p>
+        <div class="options">
+            <label><input type="radio" name="q46" value="a"> α) Έπος</label>
+            <label><input type="radio" name="q46" value="b"> β) Ιστοριογραφία</label>
+            <label><input type="radio" name="q46" value="c"> γ) Τραγωδία</
+                      </div>
+    </div>
+
+    <div class="question" id="q47">
+        <p>47. Ποιος είναι ο δημιουργός της Ιλιάδας και της Οδύσσειας;</p>
+        <div class="options">
+            <label><input type="radio" name="q47" value="a"> α) Ηρόδοτος</label>
+            <label><input type="radio" name="q47" value="b"> β) Ησίοδος</label>
+            <label><input type="radio" name="q47" value="c"> γ) Όμηρος</label>
+        </div>
+    </div>
+
+    <div class="question" id="q48">
+        <p>48. Ποια μορφή τέχνης σχετίζεται με τον Κούρο και την Κόρη;</p>
+        <div class="options">
+            <label><input type="radio" name="q48" value="a"> α) Ζωγραφική</label>
+            <label><input type="radio" name="q48" value="b"> β) Γλυπτική</label>
+            <label><input type="radio" name="q48" value="c"> γ) Αρχιτεκτονική</label>
+        </div>
+    </div>
+
+    <div class="question" id="q49">
+        <p>49. Ποιο χαρακτηριστικό αποδίδεται στα αρχαϊκά αγάλματα;</p>
+        <div class="options">
+            <label><input type="radio" name="q49" value="a"> α) Η απόλυτη φυσικότητα</label>
+            <label><input type="radio" name="q49" value="b"> β) Η αυστηρή συμμετρία</label>
+            <label><input type="radio" name="q49" value="c"> γ) Η κίνηση στο χώρο</label>
+        </div>
+    </div>
+
+    <div class="question" id="q50">
+        <p>50. Ποια τεχνική εμφανίστηκε στα κεραμικά αγγεία της εποχής;</p>
+        <div class="options">
+            <label><input type="radio" name="q50" value="a"> α) Πολύχρωμη διακόσμηση</label>
+            <label><input type="radio" name="q50" value="b"> β) Μαύρη και ερυθρή μορφή</label>
+            <label><input type="radio" name="q50" value="c"> γ) Υαλογραφία</label>
+        </div>
+    </div>
+
+    <div class="credits">
+        <p>Δημιουργήθηκε για εκπαιδευτικούς σκοπούς - 1ο Γυμνάσιο Πυλαίας</p>
+        <p>Επιμέλεια: Παναγιώτης Δόμβρος (CC BY-NC)</p>
+    </div>
+
+    <script>
+        // Correct answers based on the document
+        const correctAnswers = {
+            q1: "b", q2: "b", q3: "c", q4: "b", q5: "c",
+            q6: "b", q7: "b", q8: "b", q9: "b", q10: "b",
+            q11: "c", q12: "c", q13: "b", q14: "b", q15: "b",
+            q16: "b", q17: "a", q18: "b", q19: "b", q20: "c",
+            q21: "a", q22: "b", q23: "c", q24: "b", q25: "b",
+            q26: "b", q27: "a", q28: "b", q29: "b", q30: "c",
+            q31: "c", q32: "b", q33: "b", q34: "b", q35: "c",
+            q36: "a", q37: "c", q38: "a", q39: "b", q40: "c",
+            q41: "c", q42: "b", q43: "b", q44: "c", q45: "c",
+            q46: "a", q47: "c", q48: "b", q49: "b", q50: "b"
+        };
+
+        let score = 0;
+        const answeredQuestions = new Set();
+        const scoreElement = document.querySelector('.score');
+
+        // Add event listeners to all radio buttons
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const questionId = this.name;
+                
+                // Check if this question was already answered
+                if (answeredQuestions.has(questionId)) {
+                    return;
+                }
+                
+                const selectedValue = this.value;
+                const questionElement = document.getElementById(questionId);
+                const isCorrect = selectedValue === correctAnswers[questionId];
+                
+                if (isCorrect) {
+                    // Correct answer - highlight in green
+                    questionElement.classList.add('correct');
+                    score++;
+                    scoreElement.textContent = score;
+                } else {
+                    // Incorrect answer - highlight selected option in red
+                    questionElement.classList.add('incorrect');
+                    const correctOption = questionElement.querySelector(`input[value="${correctAnswers[questionId]}"]`).parentNode;
+                    correctOption.style.backgroundColor = '#2a5a2a';
+                    this.parentNode.style.backgroundColor = '#5a2a2a';
+                }
+                
+                // Disable all options for this question
+                questionElement.querySelectorAll('input[type="radio"]').forEach(input => {
+                    input.disabled = true;
+                });
+                
+                // Mark this question as answered
+                answeredQuestions.add(questionId);
+            });
+        });
+    </script>
+</body>
+</html>
